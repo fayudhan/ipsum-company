@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <link href="src/output.css" rel="stylesheet" />
+
+    <style>
+      /* FAQ Accordion */
+      .accordion-content {
+        display: none;
+      }
+      .accordion-content.open {
+        display: block;
+      }
+    </style>
+
+    <title>Ipsum Company</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <nav class="mx-auto max-w-6xl bg-white py-4">
+      <div class="px-4 lg:px-8">
+        <div
+          class="flex h-16 rounded-xl border-2 border-gray-400 border-opacity-25 px-4"
+        >
+          <div class="flex w-full justify-between">
+            <div class="flex items-center">
+              <a href="/">
+                <img
+                  class="h-8 w-auto"
+                  src="assets/logoipsum-325.svg"
+                  alt="Logo"
+                  S
+                />
+              </a>
+            </div>
+            <div class="hidden lg:flex lg:space-x-8">
+              <a
+                href="#"
+                class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 visited:text-gray-900 hover:text-gray-700 active:text-gray-900"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 hover:text-gray-700"
+                >Features</a
+              >
+              <a
+                href="#"
+                class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 hover:text-gray-700"
+                >Pricing</a
+              >
+              <a
+                href="#"
+                class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 hover:text-gray-700"
+                >Blog</a
+              >
+              <a
+                href="#"
+                class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 hover:text-gray-700"
+                >Testimonials</a
+              >
+            </div>
+            <div class="hidden lg:flex lg:items-center">
+              <div class="flex items-center space-x-4">
+                <a
+                  href="#"
+                  class="relative flex text-sm font-medium text-gray-900 hover:text-opacity-50"
+                >
+                  <span>Sign Up</span>
+                  <img
+                    src="assets/chevron-right-svgrepo-com.svg"
+                    alt="chevron-right"
+                    class="relative top-1.5 ml-1 h-3 w-3"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center rounded-md border border-transparent bg-black px-4 py-1 text-sm font-medium text-white transition-opacity duration-300 hover:opacity-75 active:opacity-50"
+                  >Login</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="-mr-2 flex items-center lg:hidden">
+            <button
+              type="button"
+              class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              id="mobile-menu-button"
+            >
+              <span class="sr-only">Open main menu</span>
+              <img
+                src="assets/menu-alt-01-svgrepo-com.svg"
+                alt="mobile-menu"
+                class="h-8 w-8"
+              />
+              <!-- <svg
+                class="block h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+              <svg
+                class="hidden h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg> -->
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:hidden" id="mobile-menu">
+        <div class="space-y-1 pb-3 pt-2">
+          <a
+            href="#"
+            class="block border-l-4 border-indigo-500 py-2 pl-3 pr-4 text-base font-medium text-gray-400 visited:text-gray-900"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-400"
+            >Features</a
+          >
+          <a
+            href="#"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-400"
+            >Pricing</a
+          >
+          <a
+            href="#"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-400"
+            >Blog</a
+          >
+          <a
+            href="#"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-400"
+            >Testimonials</a
+          >
+          <a
+            href="#"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-900"
+            >Sign Up</a
+          >
+          <a
+            href="#"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-900"
+            >Login</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- nav -->
+
+    <section class="flex items-center justify-center bg-white">
+      <div class="mx-auto max-w-2xl px-4 py-16 text-center">
+        <h1
+          class="mb-4 text-4xl font-medium leading-tight text-gray-950 md:text-6xl"
+        >
+          Elevate Sales With Seamless Management
+        </h1>
+
+        <p class="text-md mx-auto mb-8 text-gray-400 md:max-w-lg md:text-lg">
+          Empower Your Team, Streamline Your Processes, And Boost Revenue With
+          Our Sales Management Platform
+        </p>
+
+        <div class="flex items-center justify-center space-x-4">
+          <a
+            href="#"
+            class="relative flex rounded-md bg-green-800 px-6 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-green-950"
+          >
+            <span>Get Started </span>
+            <img
+              src="assets/chevron-right-svgrepo-com - white.svg"
+              alt="chevron-right-svgrepo-com - white"
+              class="relative top-0.5 h-4 w-4"
+            />
+          </a>
+          <a
+            href="#"
+            class="relative flex rounded-md border border-gray-300 bg-white px-6 py-3 text-sm font-medium text-gray-800 transition-colors duration-300 hover:bg-gray-100"
+          >
+            <img
+              src="assets/play-svgrepo-com.svg"
+              alt="play-svgrepo-com"
+              class="relative top-0.5 h-4 w-4"
+            />
+            <span class="ml-2">Play Video</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <!-- Foto 1 -->
+        <div class="relative overflow-hidden rounded-lg">
+          <img
+            src="assets/rachael-gorjestani-X6CZGpJBi8U-unsplash.jpg"
+            alt="Foto 1"
+            class="h-96 w-full rounded-lg object-cover"
+          />
+        </div>
+
+        <!-- Foto 2 -->
+        <div class="relative overflow-hidden rounded-lg">
+          <img
+            src="assets/austin-distel-wD1LRb9OeEo-unsplash.jpg"
+            alt="Foto 2"
+            class="h-96 w-full rounded-lg object-cover"
+          />
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-between"
+          >
+            <p class="mt-4 text-center text-4xl text-white">
+              Team Work <br />Business
+            </p>
+            <div
+              class="mb-4 flex cursor-pointer items-center rounded-full bg-white py-2 pl-2 pr-6 transition-colors duration-300 hover:bg-gray-100"
+            >
+              <div
+                class="flex h-6 w-6 items-center justify-center rounded-full bg-black"
+              >
+                <img
+                  src="assets/chevron-right-svgrepo-com - white.svg"
+                  alt="chevron-right"
+                  class="h-4 w-4"
+                />
+              </div>
+              <p class="ml-2 flex items-center text-sm font-bold text-gray-950">
+                Join With Our Platform
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foto 3 -->
+        <div class="relative overflow-hidden rounded-lg">
+          <img
+            src="assets/campaign-creators-pypeCEaJeZY-unsplash.jpg"
+            alt="Foto 3"
+            class="h-96 w-full rounded-lg object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl py-8">
+      <div class="relative flex items-center justify-center">
+        <div
+          class="relative -top-3 h-0.5 w-1/4 bg-gradient-to-r from-transparent to-gray-200"
+        ></div>
+        <h2 class="mb-8 text-center text-2xl font-bold text-gray-400">
+          TRUSTED BY
+        </h2>
+        <div
+          class="relative -top-3 h-0.5 w-1/4 bg-gradient-to-r from-transparent to-gray-200"
+        ></div>
+      </div>
+      <div
+        class="grid grid-cols-2 justify-items-center gap-4 px-4 sm:grid-cols-5"
+      >
+        <!-- Company Logo 1 Gumroad -->
+        <div class="h-14 w-auto">
+          <img
+            src="assets/company-logo/Adobe.png"
+            alt="Company Logo 1 Gumroad"
+            class="h-full w-full object-contain"
+          />
+        </div>
+        <!-- Company Logo 2 Gumroad -->
+        <div class="h-14 w-auto">
+          <img
+            src="assets/company-logo/Gumroad.png"
+            alt="Company Logo 2 Gumroad"
+            class="h-full w-full object-contain"
+          />
+        </div>
+        <!-- Company Logo 3 Mailchimp -->
+        <div class="h-14 w-auto">
+          <img
+            src="assets/company-logo/Mailchimp.png"
+            alt="Company Logo 3 Mailchimp"
+            class="h-full w-full object-contain"
+          />
+        </div>
+        <!-- Company Logo 4 Opendoor -->
+        <div class="h-14 w-auto">
+          <img
+            src="assets/company-logo/Opendoor.png"
+            alt="Company Logo 4 Opendoor"
+            class="h-full w-full object-contain"
+          />
+        </div>
+        <!-- Company Logo 5 Pipedrive-->
+        <div class="h-14 w-auto">
+          <img
+            src="assets/company-logo/Pipedrive.png"
+            alt="Company Logo 5 Pipedrive"
+            class="h-full w-full object-contain"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-8">
+      <h2 class="mb-8 text-center text-3xl font-bold text-gray-700">
+        Our Advantage
+      </h2>
+      <p class="mx-auto mb-12 max-w-lg text-center text-lg text-gray-400">
+        Unlock Your Team's Full Potential, Optimize Sales Processes, And Drive
+        Substantial Revenue Growth With Our Platform.
+      </p>
+
+      <!-- Grid 1 -->
+      <div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <!-- Div left (70%) -->
+        <div
+          class="flex flex-col rounded-2xl border-gray-200 bg-gray-100 p-6 md:col-span-2"
+        >
+          <img
+            src="assets/dylan-gillis-KdeqA3aTnBY-unsplash.jpg"
+            alt="Image 1"
+            class="mb-4 h-48 w-full rounded-lg object-cover"
+          />
+          <h3 class="mb-2 text-xl font-semibold text-gray-800">
+            Management With Various Roles
+          </h3>
+          <p class="text-gray-600">
+            Description for the first div which takes 70% of the width in larger
+            screens.
+          </p>
+        </div>
+
+        <!-- Div right (30%) -->
+        <div class="flex flex-col rounded-2xl border-gray-200 bg-gray-100 p-6">
+          <img
+            src="assets/rachael-gorjestani-X6CZGpJBi8U-unsplash.jpg"
+            alt="Image 2"
+            class="mb-4 h-48 w-full rounded-lg object-cover"
+          />
+          <h3 class="mb-2 text-xl font-semibold text-gray-800">
+            Can Be Integrated
+          </h3>
+          <p class="text-gray-600">
+            Description for the second div which takes 30% of the width in
+            larger screens.
+          </p>
+        </div>
+      </div>
+
+      <!-- Grid 2 -->
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <!-- Div left (30%) -->
+        <div class="flex flex-col rounded-2xl border-gray-200 bg-gray-100 p-6">
+          <img
+            src="assets/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg"
+            alt="Image 3"
+            class="mb-4 h-48 w-full rounded-lg object-cover"
+          />
+          <h3 class="mb-2 text-xl font-semibold text-gray-800">
+            Communication Easier
+          </h3>
+          <p class="text-gray-600">
+            Description for the third div which takes 30% of the width in larger
+            screens.
+          </p>
+        </div>
+
+        <!-- Div right (70%) -->
+        <div
+          class="flex flex-col rounded-2xl border-gray-200 bg-gray-100 p-6 md:col-span-2"
+        >
+          <img
+            src="assets/markus-winkler-IrRbSND5EUc-unsplash.jpg"
+            alt="Image 4"
+            class="mb-4 h-48 w-full rounded-lg object-cover"
+          />
+          <h3 class="mb-2 text-xl font-semibold text-gray-800">
+            Graph About Sales
+          </h3>
+          <p class="text-gray-600">
+            Description for the fourth div which takes 70% of the width in
+            larger screens.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-8">
+      <!-- Judul -->
+      <h2 class="mb-4 text-center text-3xl font-bold text-gray-700">
+        All Features
+      </h2>
+
+      <!-- Teks -->
+      <p class="mx-auto mb-12 max-w-lg text-center text-lg text-gray-400">
+        Discover Our Powerful Tools Can Revolutionize Your Sales Process And
+        Drive Your Business Growth
+      </p>
+
+      <!-- Div Container -->
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <!-- Div Kiri: FAQ Accordion -->
+        <div>
+          <!-- FAQ Accordion -->
+          <div class="bg-white">
+            <!-- FAQ 1 -->
+            <div class="mb-4 rounded-lg border border-gray-200 p-4 shadow-sm">
+              <button
+                class="accordion-button flex w-full items-center justify-start text-left text-lg font-semibold"
+              >
+                <img
+                  src="assets/chevron-right-svgrepo-com.svg"
+                  alt="Expand"
+                  class="h-6 w-6"
+                />
+                <span>What is Corporate Management?</span>
+              </button>
+              <div class="accordion-content hidden text-gray-700">
+                <p class="mt-2">
+                  Corporate management refers to the process of leading,
+                  administrating, and directing a company. It involves
+                  overseeing operations, making strategic decisions, and
+                  managing resources to achieve the company's objectives.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="mb-4 rounded-lg border border-gray-200 p-4 shadow-sm">
+              <button
+                class="accordion-button flex w-full items-center justify-start text-left text-lg font-semibold"
+              >
+                <img
+                  src="assets/chevron-right-svgrepo-com.svg"
+                  alt="Expand"
+                  class="h-6 w-6"
+                />
+                <span>Why is Strategic Planning Important?</span>
+              </button>
+              <div class="accordion-content hidden text-gray-700">
+                <p class="mt-2">
+                  Strategic planning is important because it provides a sense of
+                  direction and outlines measurable goals. It is a tool that is
+                  useful for guiding day-to-day decisions and evaluating
+                  progress and changing approaches when moving forward.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="mb-4 rounded-lg border border-gray-200 p-4 shadow-sm">
+              <button
+                class="accordion-button flex w-full items-center justify-start text-left text-lg font-semibold"
+              >
+                <img
+                  src="assets/chevron-right-svgrepo-com.svg"
+                  alt="Expand"
+                  class="h-6 w-6"
+                />
+                <span>How to Improve Team Collaboration?</span>
+              </button>
+              <div class="accordion-content hidden text-gray-700">
+                <p class="mt-2">
+                  Improving team collaboration involves clear communication,
+                  setting common goals, building trust, and providing the right
+                  tools and resources. Regular team-building activities and
+                  feedback sessions can also enhance collaboration.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="mb-4 rounded-lg border border-gray-200 p-4 shadow-sm">
+              <button
+                class="accordion-button flex w-full items-center justify-start text-left text-lg font-semibold"
+              >
+                <img
+                  src="assets/chevron-right-svgrepo-com.svg"
+                  alt="Expand"
+                  class="h-6 w-6"
+                />
+                <span>What is the Role of Corporate Governance?</span>
+              </button>
+              <div class="accordion-content hidden text-gray-700">
+                <p class="mt-2">
+                  Corporate governance involves a set of rules, practices, and
+                  processes used to direct and control a company. It balances
+                  the interests of stakeholders such as shareholders,
+                  management, customers, suppliers, financiers, government, and
+                  the community.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Div Kanan: Gambar -->
+        <div class="flex items-center justify-center">
+          <img
+            src="assets/myriam-jessier-VHXiGXxwOQ4-unsplash.jpg"
+            alt="Example Image"
+            class="h-auto max-w-full rounded-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <footer class="mx-auto max-w-6xl bg-gray-800 py-4 text-gray-300">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 - All rights reserved</p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
